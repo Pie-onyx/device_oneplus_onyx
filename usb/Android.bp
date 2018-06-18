@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2018 The LineageOS Project
+// Copyright (C) 2017-2018 The LineageOS Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,27 +14,23 @@
 // limitations under the License.
 
 cc_binary {
-    name: "android.hardware.light@2.0-service.onyx",
+    name: "android.hardware.usb@1.0-service.onyx",
     defaults: ["hidl_defaults"],
+    init_rc: ["android.hardware.usb@1.0-service.onyx.rc"],
     relative_install_path: "hw",
-    init_rc: ["android.hardware.light@2.0-service.onyx.rc"],
-    srcs: ["service.cpp", "Light.cpp"],
+    vendor: true,
+    srcs: [
+        "service.cpp",
+        "Usb.cpp",
+    ],
     shared_libs: [
         "libbase",
+        "libcutils",
         "libhidlbase",
         "libhidltransport",
-        "liblog",
         "libhwbinder",
         "libutils",
         "libhardware",
-        "android.hardware.light@2.0",
+        "android.hardware.usb@1.0",
     ],
-    arch: {
-        arm: {
-            cflags: [
-                "-DARCH_ARM_32"
-            ],
-        },
-    },
-    vendor: true,
 }

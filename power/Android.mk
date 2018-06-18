@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2018 The LineageOS Project
+# Copyright 2014 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,10 +12,20 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/device.mk \
-    $(LOCAL_DIR)/lemon_onyx.mk
+LOCAL_PATH:= $(call my-dir)
 
-COMMON_LUNCH_CHOICES := \
-    lemon_onyx-userdebug
+include $(CLEAR_VARS)
+
+ifneq ($(TARGET_TAP_TO_WAKE_NODE),)
+LOCAL_CFLAGS += -DTAP_TO_WAKE_NODE=\"$(TARGET_TAP_TO_WAKE_NODE)\"
+endif
+
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_SRC_FILES := power.c
+LOCAL_SHARED_LIBRARIES := liblog libcutils
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE := power.msm8974
+LOCAL_VENDOR_MODULE := true
+include $(BUILD_SHARED_LIBRARY)
