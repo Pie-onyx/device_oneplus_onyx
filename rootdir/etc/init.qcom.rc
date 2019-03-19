@@ -217,6 +217,10 @@ on post-fs
     chmod 0660 /proc/tri-state-key/keyCode_middle
     chmod 0660 /proc/tri-state-key/keyCode_bottom
 
+    # Avoid USB crash
+    setprop persist.adb.nonblocking_ffs 0
+    setprop ro.adb.nonblocking_ffs 0
+
 on post-fs-data
     mkdir /data/media 0770 media_rw media_rw
 
