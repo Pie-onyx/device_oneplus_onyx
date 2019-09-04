@@ -34,7 +34,6 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    fstab.qcom \
     init.qcom.power.rc \
     init.qcom.rc \
     init.qcom.usb.rc \
@@ -141,6 +140,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service
+
+# Fstab
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.qcom \
+    $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
 
 # Graphics
 PRODUCT_PACKAGES += \
