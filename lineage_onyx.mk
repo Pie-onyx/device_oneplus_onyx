@@ -43,3 +43,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="OnePlus-user 6.0.1 MMB29M 10281213 release-keys"
 
 BUILD_FINGERPRINT := OnePlus/OnePlus/OnePlus:6.0.1/MMB29M/10281213:user/release-keys
+
+# Unofficial build ID
+TARGET_UNOFFICIAL_BUILD_ID := YumeMichi
