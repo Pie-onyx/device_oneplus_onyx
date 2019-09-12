@@ -37,8 +37,8 @@ LOCAL_C_INCLUDES := \
         $(LOCAL_PATH)/../stack/common \
         framework/native/include \
         frameworks/native/include/media/openmax \
-        hardware/qcom/display-caf-msm8974/libgralloc \
-        hardware/qcom/media-caf-msm8974/libstagefrighthw \
+        hardware/qcom/display/libgralloc \
+        hardware/qcom/media/libstagefrighthw \
         system/media/camera/include \
         $(LOCAL_PATH)/../../mm-image-codec/qexif \
         $(LOCAL_PATH)/../../mm-image-codec/qomx_core \
@@ -51,7 +51,7 @@ else
 LOCAL_CFLAGS += -DUSE_KK_CODE
 endif
 
-LOCAL_C_INCLUDES += hardware/qcom/display-caf-msm8974/libgralloc
+LOCAL_C_INCLUDES += hardware/qcom/display/libgralloc
 LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
 LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include/media
 LOCAL_ADDITIONAL_DEPENDENCIES := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
