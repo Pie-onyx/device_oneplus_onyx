@@ -79,9 +79,12 @@ eval $(/vendor/bin/hci_qcomm_init -e $PWR_CLASS $LE_PWR_CLASS && echo "exit_code
 case $exit_code_hci_qcomm_init in
   0) logi "Bluetooth QSoC firmware download succeeded, $BTS_DEVICE $BTS_TYPE $BTS_BAUD $BTS_ADDRESS";;
   *) failed "Bluetooth QSoC firmware download failed" $exit_code_hci_qcomm_init;
+
      setprop vendor.bluetooth.status off
+
      exit $exit_code_hci_qcomm_init;;
 esac
 
 setprop vendor.bluetooth.status on
+
 exit 0

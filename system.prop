@@ -2,6 +2,8 @@
 # system.prop for OnePlus X
 #
 
+ro.prj_name=15055
+
 # RIL
 DEVICE_PROVISIONED=1
 persist.data.netmgrd.qos.enable=true
@@ -28,22 +30,19 @@ telephony.lteOnGsmDevice=1
 
 # Audio
 mm.enable.sec.smoothstreaming=true
-mm.enable.qcom_parser=37491
-ro.vendor.audio.sdk.fluencetype=fluence
-persist.vendor.audio.fluence.voicecall=true
-persist.vendor.audio.fluence.voicerec=false
-persist.vendor.audio.fluence.speaker=true
+af.fast_track_multiplier=1
+audio.offload.video=true
+vendor.audio_hal.period_size=192
 vendor.audio.offload.buffer.size.kb=32
-av.offload.enable=true
-av.streaming.offload.enable=true
 vendor.audio.offload.multiple.enabled=false
 vendor.audio.offload.gapless.enabled=true
-vendor.audio.tunnel.encode=false
 media.aac_51_output_enabled=true
-audio.offload.pcm.16bit.enable=true
-audio.offload.pcm.24bit.enable=true
+audio.deep_buffer.media=true
 ro.config.media_vol_steps=25
 ro.config.vc_call_vol_steps=7
+ro.vendor.audio.sdk.fluencetype=fluence
+persist.vendor.audio.fluence.speaker=true
+persist.vendor.audio.fluence.voicecall=true
 
 # Bluetooth
 ro.bluetooth.hfp.ver=1.7
@@ -53,20 +52,12 @@ ro.bluetooth.dun=false
 ro.bluetooth.sap=false
 
 # Camera
+camera2.portability.force_api=1
 persist.camera.cpp.duplication=false
 
 # Graphics
-debug.sf.hw=1
-debug.egl.hw=1
-debug.composition.type=c2d
 persist.hwc.mdpcomp.enable=true
-debug.mdpcomp.4k2kSplit=1
-debug.mdpcomp.logs=0
-dev.pm.dyn_samplingrate=1
-persist.demo.hdmirotationlock=false
-ro.hdmi.enable=true
-persist.vendor.audio.speaker.prot.enable=false
-qcom.hw.aac.encoder=true
+persist.sys.strictmode.disable=true
 ro.opengles.version=196608
 ro.sf.lcd_density=420
 ro.qualcomm.cabl=0
@@ -76,39 +67,15 @@ debug.hwui.use_buffer_age=false
 ro.vendor.qti.sys.fw.bservice_enable=true
 
 # QC vendor extension
-ro.vendor.extension_library=libqti-perfd-client.so
+ro.frp.pst=/dev/block/platform/msm_sdcc.1/by-name/config
 drm.service.enabled=true
 
 # QMI
 persist.data.qmi.adb_logmask=0
 
 # Sensors
-ro.qc.sdk.sensors.gestures=true
-ro.qc.sdk.gestures.camera=false
-ro.qc.sdk.camera.facialproc=false
-ro.prj_name=15055
-ro.qti.sensors.smd=true
-ro.qti.sensors.ir_proximity=true
-ro.qti.sensors.game_rv=true
-ro.qti.sensors.georv=true
-ro.qti.sensors.smgr_mag_cal_en=true
-ro.qti.sensors.step_detector=true
-ro.qti.sensors.step_counter=true
-ro.qti.sensors.tap=false
-ro.qti.sensors.facing=false
-ro.qti.sensors.tilt=false
-ro.qti.sensors.amd=false
-ro.qti.sensors.rmd=false
-ro.qti.sensors.vmd=false
-ro.qti.sensors.pedometer=false
-ro.qti.sensors.pam=false
-ro.qti.sdk.sensors.gestures=false
-ro.qti.sensors.bte=true
 ro.qti.sensors.gtap=true
 ro.qti.sensors.vmd=true
-
-# Storage
-ro.sys.sdcardfs=true
 
 # Time services
 persist.timed.enable=true

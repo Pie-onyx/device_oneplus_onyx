@@ -2,18 +2,29 @@
 /dev/block/platform/msm_sdcc\.1/by-name/oppodycnvbk     u:object_r:nvbackup_block_device:s0
 /dev/block/platform/msm_sdcc\.1/by-name/oppostanvbk     u:object_r:nvbackup_block_device:s0
 
-# Persist filesystem
-/dev/block/platform/msm_sdcc\.1/by-name/persist         u:object_r:persist_block_device:s0
-
 # FRP partition
-/dev/block/bootdevice/by-name/config                    u:object_r:frp_block_device:s0
+/dev/block/platform/msm_sdcc\.1/by-name/config          u:object_r:frp_block_device:s0
 
-# Old camera socket
-/data/cam_socket1                                       u:object_r:camera_socket:s0
-/data/cam_socket2                                       u:object_r:camera_socket:s0
+# Reserve2 partition
+/dev/block/platform/msm_sdcc\.1/by-name/reserve2        u:object_r:reserve2_block_device:s0
 
-# Old slim_ap executable
-/system/vendor/bin/slim_ap_daemon                       u:object_r:location_exec:s0
+# Modem partition
+/dev/block/platform/msm_sdcc\.1/by-name/modem           u:object_r:modem_block_device:s0
 
-# Backlight
-/sys/class/leds/lcd-backlight/brightness                u:object_r:touchscreen_file:s0
+# Persist files
+/persist/sns.reg                                        u:object_r:sensors_persist_file:s0
+
+# Sysfs nodes
+/sys/devices/qpnp-bms-10/power_supply/bms(/.*)?         u:object_r:sysfs_battery_supply:s0
+
+# Offline charging LED
+/system/vendor/bin/init.chargerled.sh                   u:object_r:charger_led_exec:s0
+
+# Light HAL
+/system/vendor/bin/hw/android\.hardware\.light@2\.0-service\.onyx                  u:object_r:hal_light_default_exec:s0
+
+# Power HAL
+/system/vendor/bin/hw/android\.hardware\.power@1\.1-service\.onyx                  u:object_r:hal_power_default_exec:s0
+
+# Touch features
+/system/vendor/bin/hw/vendor\.lineage\.touch@1\.0-service\.onyx                    u:object_r:hal_lineage_touch_default_exec:s0

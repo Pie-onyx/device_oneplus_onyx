@@ -42,7 +42,7 @@
         </receiver>
 
         <service android:name=".DozeService"
-                 android:permission="OneplusDozeService">
+                 android:permission="OnyxDozeService">
         </service>
 
         <activity

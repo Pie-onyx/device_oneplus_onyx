@@ -3,11 +3,8 @@ bin/adsprpcd:vendor/bin/adsprpcd
 vendor/lib/libadsprpc.so
 vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libfastcvopt.so
-vendor/lib/libscve.so
-vendor/lib/libscve_stub.so
 
-# Bluetooth
-# bin/hci_qcomm_init (from bacon)
+# Bluetooth (from bacon)
 bin/hci_qcomm_init:vendor/bin/hci_qcomm_init|022d27e7c7cba3c9bbb0deadaa1834a620eeb407
 vendor/lib/libbtnv.so
 
@@ -23,8 +20,6 @@ vendor/lib/soundfx/libqcvirt.so
 
 # Camera
 bin/mm-qcamera-daemon:vendor/bin/mm-qcamera-daemon
-lib/libFNVfbEngineLib.so:vendor/lib/libFNVfbEngineLib.so
-lib/libopcamerahw_interface.so:vendor/lib/libopcamerahw_interface.so
 vendor/lib/libjpegdhw.so
 vendor/lib/libjpegehw.so
 vendor/lib/libmmcamera2_c2d_module.so
@@ -42,38 +37,27 @@ vendor/lib/libmmcamera2_stats_modules.so
 vendor/lib/libmmcamera2_vpe_module.so
 vendor/lib/libmmcamera2_wnr_module.so
 vendor/lib/libmmcamera_cac_lib.so
-vendor/lib/libmmcamera_dw9761b_eeprom.so
 vendor/lib/libmmcamera_faceproc.so
-# vendor/lib/libmmcamera_hdr_gb_lib.so (from OnePlusOSS)
-vendor/lib/libmmcamera_hdr_gb_lib.so|c1d27b1617d95884365b01c1823abfa0f48e36d5
+vendor/lib/libmmcamera_hdr_gb_lib.so
 vendor/lib/libmmcamera_hdr_lib.so
 vendor/lib/libmmcamera_imglib.so
-vendor/lib/libmmcamera_imx214.so
-vendor/lib/libmmcamera_ofilm_oty5f03_eeprom.so
-vendor/lib/libmmcamera_ov5648.so
 vendor/lib/libmmcamera_ov8858.so
 vendor/lib/libmmcamera_pdaf.so
 vendor/lib/libmmcamera_pdafcamif.so
-vendor/lib/libmmcamera_s5k3l8.so
 vendor/lib/libmmcamera_s5k3m2.so
 vendor/lib/libmmcamera_sunny_f13s01l_eeprom.so
-vendor/lib/libmmcamera_sunny_p12v01m_eeprom.so
-vendor/lib/libmmcamera_sunny_p5v23c_eeprom.so
 vendor/lib/libmmcamera_sunny_p8v12b_eeprom.so
-vendor/lib/libmmcamera_sunny_q8v18a_eeprom.so
 vendor/lib/libmmcamera_tintless_algo.so
 vendor/lib/libmmcamera_tintless_bg_pca_algo.so
-vendor/lib/libmmcamera_truly_cm7700_eeprom.so
 vendor/lib/libmmcamera_wavelet_lib.so
 vendor/lib/libmmipl.so
 vendor/lib/libmmjpeg.so
 vendor/lib/libmmqjpeg_codec.so
 vendor/lib/liboemcamera.so
+vendor/lib/libqomx_jpegdec.so
+vendor/lib/libqomx_jpegenc.so
 
 # Camera actuators
-vendor/lib/libactuator_dw9714.so
-vendor/lib/libactuator_dw9714_camcorder.so
-vendor/lib/libactuator_dw9714_camera.so
 vendor/lib/libactuator_dw9800w.so
 vendor/lib/libactuator_dw9800w_camcorder.so
 vendor/lib/libactuator_dw9800w_camera.so
@@ -87,23 +71,19 @@ vendor/lib/libchromatix_ov8858_preview_binding.so
 vendor/lib/libchromatix_ov8858_small_video.so
 vendor/lib/libchromatix_ov8858_snapshot.so
 vendor/lib/libchromatix_s5k3m2_common.so
-vendor/lib/libchromatix_s5k3m2_common_panorama.so
 vendor/lib/libchromatix_s5k3m2_default_video.so
 vendor/lib/libchromatix_s5k3m2_hfr_120fps.so
 vendor/lib/libchromatix_s5k3m2_hfr_60fps.so
 vendor/lib/libchromatix_s5k3m2_hfr_90fps.so
 vendor/lib/libchromatix_s5k3m2_liveshot.so
 vendor/lib/libchromatix_s5k3m2_preview.so
-vendor/lib/libchromatix_s5k3m2_preview_panorama.so
 vendor/lib/libchromatix_s5k3m2_snapshot.so
-vendor/lib/libchromatix_s5k3m2_snapshot_panorama.so
-vendor/lib/libchromatix_s5k3m2_video_hd.so
 vendor/lib/libchromatix_s5k3m2_zsl.so
 
 # Camera firmware
 etc/firmware/cpp_firmware_v1_2_0.fw:vendor/firmware/cpp_firmware_v1_2_0.fw
 
-# DRM
+# Recovery
 bin/qseecomd:vendor/bin/qseecomd
 vendor/lib/libQSEEComAPI.so
 vendor/lib/libdrmfs.so
@@ -111,11 +91,13 @@ vendor/lib/libdrmtime.so
 vendor/lib/librpmb.so
 vendor/lib/libssd.so
 
+# Widevine DRM (from angler)
+vendor/lib/mediadrm/libwvdrmengine.so|66ba66d047044f92eb0eada1faf6a5799ded90ab
+
 # GPS
 bin/loc_launcher:vendor/bin/loc_launcher
 lib/libloc_api_v02.so:vendor/lib/libloc_api_v02.so
-# lib/libloc_ds_api.so (from bacon)
-lib/libloc_ds_api.so:vendor/lib/libloc_ds_api.so|99a6f29860dbe0ed6fe3cbfdbb2277a63850f2c0
+lib/libloc_ds_api.so:vendor/lib/libloc_ds_api.so
 vendor/lib/hw/flp.default.so
 vendor/lib/libflp.so
 vendor/lib/libgeofence.so
@@ -143,28 +125,19 @@ vendor/lib/libscale.so
 etc/firmware/a330_pfp.fw:vendor/firmware/a330_pfp.fw
 etc/firmware/a330_pm4.fw:vendor/firmware/a330_pm4.fw
 
-# Keymaster
-vendor/lib/hw/keystore.msm8974.so
-
 # Listen service
 vendor/lib/liblisten.so
 vendor/lib/liblistenhardware.so
 vendor/lib/liblistenjni.so
 vendor/lib/liblistensoundmodel.so
 
-# Media
-vendor/lib/libExtendedExtractor.so
-vendor/lib/libHevcSwDecoder.so
+# OMX
 vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxAmrwbplusDec.so
 vendor/lib/libOmxEvrcDec.so
-vendor/lib/libOmxMux.so
 vendor/lib/libOmxQcelp13Dec.so
 vendor/lib/libOmxVdecHevc.so
 vendor/lib/libOmxWmaDec.so
-vendor/lib/libmmparser.so
-vendor/lib/libqomx_jpegdec.so
-vendor/lib/libqomx_jpegenc.so
 
 # Modem firmware
 etc/firmware/adsp.b00:vendor/firmware/adsp.b00
@@ -249,19 +222,11 @@ etc/firmware/widevine.b02:vendor/firmware/widevine.b02
 etc/firmware/widevine.b03:vendor/firmware/widevine.b03
 etc/firmware/widevine.mdt:vendor/firmware/widevine.mdt
 
-# Perf (from ham)
-bin/mpdecision:vendor/bin/mpdecision|9d637e787795719ad05758201f201d761f67dfb9
-vendor/lib/libqti-perfd-client.so|560e00d6cd9fd69fa8a47e3cc392d75d943f0dae
-
-# Postprocessing
-bin/mm-pp-daemon:vendor/bin/mm-pp-daemon
-vendor/lib/libdisp-aba.so
--vendor/lib/libmm-abl.so
-vendor/lib/libmm-abl-oem.so
+# Perf
+bin/mpdecision:vendor/bin/mpdecision
 
 # Qualcomm framework
 bin/irsc_util:vendor/bin/irsc_util
-vendor/lib/libdataitems.so
 vendor/lib/libdiag.so
 vendor/lib/libdsi_netctrl.so
 vendor/lib/libdsutils.so
@@ -290,13 +255,14 @@ bin/rfs_access:vendor/bin/rfs_access
 bin/rmt_storage:vendor/bin/rmt_storage
 etc/data/dsi_config.xml:vendor/etc/data/dsi_config.xml
 etc/data/netmgr_config.xml:vendor/etc/data/netmgr_config.xml
-etc/permissions/qcnvitems.xml:vendor/etc/permissions/qcnvitems.xml|dd47edbccc24a5c254dca18250c0136ecab4f0d6
-etc/permissions/qcrilhook.xml:vendor/etc/permissions/qcrilhook.xml|5a65b197fbc65e3e89e829d07da11904eae3e938
-framework/ConnectivityExt.jar:vendor/framework/ConnectivityExt.jar
-framework/qcnvitems.jar:vendor/framework/qcnvitems.jar
-framework/qcrilhook.jar:vendor/framework/qcrilhook.jar
+etc/permissions/qcnvitems.xml:vendor/etc/permissions/qcnvitems.xml
+etc/permissions/qcrilhook.xml:vendor/etc/permissions/qcrilhook.xml
+-framework/ConnectivityExt.jar:vendor/framework/ConnectivityExt.jar
+-framework/qcnvitems.jar:vendor/framework/qcnvitems.jar
+-framework/qcrilhook.jar:vendor/framework/qcrilhook.jar
 lib/libmdmdetect.so:vendor/lib/libmdmdetect.so
 lib/libparam.so:vendor/lib/libparam.so
+vendor/lib/libcneapiclient.so
 vendor/lib/libconfigdb.so
 vendor/lib/liblqe.so
 vendor/lib/libnetmgr.so
@@ -305,7 +271,6 @@ vendor/lib/libril-qc-qmi-1.so
 vendor/lib/libril-qc-radioconfig.so
 vendor/lib/libril-qcril-hook-oem.so
 vendor/lib/libxml.so
-vendor/lib/libcneapiclient.so
 
 # RenderScript (from bullhead)
 vendor/lib/libRSDriver_adreno.so|2044baf0169177e52aba6d7138f80559ecf2b58d
@@ -314,28 +279,19 @@ vendor/lib/librs_adreno_sha1.so|e797997d3ac69dfa87904863672c5b9769c796cc
 
 # Sensors
 bin/sensors.qcom:vendor/bin/sensors.qcom
-etc/firmware/tp/15055/15055_FW_S3508_Tpk.img:vendor/firmware/tp/15055/15055_FW_S3508_Tpk.img
-etc/firmware/tp/15055/15055_Limit_Tpk.img:vendor/firmware/tp/15055/15055_Limit_Tpk.img
 vendor/lib/hw/activity_recognition.msm8974.so
 vendor/lib/hw/sensors.msm8974.so
-vendor/lib/libasn1cper.so
-vendor/lib/libasn1crt.so
-vendor/lib/libasn1crtx.so
 vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
-vendor/lib/libsensor_thresh.so
-vendor/lib/libsensor_user_cal.so
 
 # Thermal
-vendor/bin/thermal-engine|65beeff18e9b019b506a62f58a6e1fe9a20f7395
 vendor/lib/libthermalclient.so
-vendor/lib/libthermalioctl.so
 
 # Time services
 -app/TimeService/TimeService.apk:vendor/app/TimeService/TimeService.apk
 bin/time_daemon:vendor/bin/time_daemon
 -vendor/lib/libtime_genoff.so
-vendor/lib/libTimeService.so
+-vendor/lib/libTimeService.so
 
 # Venus (media) firmware
 etc/firmware/venus.b00:vendor/firmware/venus.b00
@@ -346,9 +302,6 @@ etc/firmware/venus.b04:vendor/firmware/venus.b04
 etc/firmware/venus.mbn:vendor/firmware/venus.mbn
 etc/firmware/venus.mdt:vendor/firmware/venus.mdt
 
-# Wcnss (from ham)
-lib/libwcnss_qmi.so:vendor/lib/libwcnss_qmi.so|d17b527007d5a9d468403a2bcf71f35d997d74bf
-
-# Widevine (from angler)
-vendor/lib/mediadrm/libwvdrmengine.so|66ba66d047044f92eb0eada1faf6a5799ded90ab
-
+# WiFi (from hammerhead)
+-lib/libwpa_qmi_eap_proxy.so:vendor/lib/libwpa_qmi_eap_proxy.so|6e41d63f973cbd20448f29f5b0b81780cc3f2694
+lib/libwcnss_qmi.so:vendor/lib/libwcnss_qmi.so|7aa2b3b41b0293316e06fd9ace837e7d8c3e7e7f
